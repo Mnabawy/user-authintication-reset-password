@@ -1,7 +1,10 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">Navbar</a>
   <form class="form-inline">
-    <a routerLink="login" class="navbar-brand">login</a>
-    <a routerLink="profile" class="navbar-brand">profile</a>
+    <a routerLink="login" class="navbar-brand" *ngIf="!loggedIn">Login</a>
+    <a (click)="logout($event)" href="#" class="navbar-brand" *ngIf="loggedIn"
+      >Logout</a
+    >
+    <a routerLink="profile" class="navbar-brand" *ngIf="loggedIn">profile</a>
   </form>
 </nav>
