@@ -12,6 +12,8 @@ export class RequestResetComponent implements OnInit {
     email: null,
   };
 
+  public error = null;
+
   constructor(private Jarwis: JarwisService, private notify: SnotifyService) {}
 
   ngOnInit(): void {}
@@ -24,6 +26,7 @@ export class RequestResetComponent implements OnInit {
   }
 
   handleResponse(res: any) {
+    console.log(res);
     this.form.email = null;
   }
 }
